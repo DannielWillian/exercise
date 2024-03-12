@@ -13,29 +13,29 @@ Maven is the dependency manager selected. It's also used as the package builder.
 
 ## Installation
 
-In the root folder `assessment` you'll find two project folders: `consumer` and `restapi`. You'll have to run `mvn install` in each of these folders:
+In the root folder you'll find two project folders: `consumer` and `restapi`. You'll have to run `mvn install` in each of these folders:
 
 ```bash
-\assessment> cd consumer
-\assessment\consumer> mvn install
-\assessment\consumer> cd ../restapi
-\assessment\restapi> mvn install
+\> cd consumer
+\consumer> mvn install
+\consumer> cd ../restapi
+\restapi> mvn install
 ```
 
 You can also import the projects into your preferred IDE. For Eclipse, you can use the `File` menu, then `Import`, `Existing Maven project`, and then select the `consumer` or `restapi` folder.
 
-After running the maven install command, you can then start up the services running Docker Compose in the `assessment` folder. The Docker engine must be running.
+After running the maven install command, you can then start up the services running Docker Compose in the root folder. The Docker engine must be running.
 
 ```bash
-\assessment\restapi> cd ..
-\assessment> docker-compose up
+\restapi> cd ..
+\> docker-compose up
 ```
 
 Once the services are up, you can hit the REST API at `http://localhost:8080`.
 
 ## Additional Information
 
-A Postman collection is provided in the `assessment` folder. All operations requested by the exercise are available in the collection.
+A Postman collection is provided in the root folder. All operations requested by the exercise are available in the collection.
 
 The system is pre-loaded with some base data about Customers, Items and Orders. The data file can be found under `restapi/src/main/resources/data.sql`. Below are the tables and pre-loaded data. As I use an in-memory database, the database gets wiped on every container restart.
 
