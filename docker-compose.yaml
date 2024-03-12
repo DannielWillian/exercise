@@ -1,0 +1,17 @@
+version: '3'
+services:
+  dannieln-rest:
+    build: ./restapi
+    ports:
+      - "8080:8080"
+    depends_on:
+      - rabbitmq
+  dannieln-consumer:
+    build: ./consumer
+    depends_on:
+      - rabbitmq
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
